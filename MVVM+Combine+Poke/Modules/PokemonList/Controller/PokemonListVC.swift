@@ -52,16 +52,22 @@ class PokemonListVC: UIViewController {
         cell.pokemonBackgroundView.layer.cornerRadius = 12
         cell.pokemonName.text = pokemon.name?.capitalized
         
+        guard let pokemonURL = pokemon.url else { return }
+        let pokemonId = getPokemonId(from: pokemonURL)
+        guard let imageDownloadRequest = URL(string: WebServiceConstants.getImageURL(from: pokemonId)) else { return }
+        
         /// One way to load image to UIImageView
 //        URLSession.shared
-//            .dataTaskPublisher(for: URL(string: WebServiceConstants.getImageURL(from: getIndex(from: currentPokemon.url!)))!)
-//            .map { (data, response) in UIImage(data: data)}
+//            .dataTaskPublisher(for: imageDownloadRequest)
+//            .map { (data, response) in
+//                let image = UIImage(data: data)
+//                image?.createPalette { palette in DispatchQueue.main.async { cell.pokemonBackgroundView.backgroundColor = palette.lightVibrantColor?.withAlphaComponent(0.3) } }
+//                return image
+//            }
 //            .replaceError(with: nil)
 //            .receive(on: DispatchQueue.main)
 //            .assign(to: \.image, on: cell.pokemonImage)
 //            .store(in: &(self.subscription))
-        
-        guard let pokemonURL = pokemon.url else { return }
         
         /// Other way to load image via Combine to UIImageView
         self.viewModel.getPokemonImage(from: pokemonURL, completion: { image in cell.pokemonImage.image = image
