@@ -53,8 +53,8 @@ class PokemonListVC: UIViewController {
         cell.pokemonName.text = pokemon.name?.capitalized
         
         guard let pokemonURL = pokemon.url else { return }
-        let pokemonId = getPokemonId(from: pokemonURL)
-        guard let imageDownloadRequest = URL(string: WebServiceConstants.getImageURL(from: pokemonId)) else { return }
+//        let pokemonId = getPokemonId(from: pokemonURL)
+//        guard let imageDownloadRequest = URL(string: WebServiceConstants.getImageURL(from: pokemonId)) else { return }
         
         /// One way to load image to UIImageView
 //        URLSession.shared
