@@ -21,6 +21,7 @@ class PokemonListVC: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Pokemons"
 
         prepareTableView()
         setupBinding()
