@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "CE93BE10-4810-4F6E-8B2B-5A78B86E9641"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "76B548F0-871C-49EB-BB6A-0F2694F3B20C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVVM+Combine+Poke/Services/WebServiceManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "getImage(from:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "76B548F0-871C-49EB-BB6A-0F2694F3B20C - ca653a2abaaaed13"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MVVM_Combine_Poke.WebServiceManager.getImage(from: Swift.String) -&gt; Combine.AnyPublisher&lt;Swift.Optional&lt;__C.UIImage&gt;, MVVM_Combine_Poke.WebServiceError&gt;"
+                  moduleName = "MVVM+Combine+Poke"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sam/XCodeProjects/MVVM+Combine+Poke/MVVM+Combine+Poke/Services/WebServiceManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "580">
+               </Location>
+               <Location
+                  uuid = "76B548F0-871C-49EB-BB6A-0F2694F3B20C - 174ec78728752b5e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.Data, __C.NSURLResponse) -&gt; Swift.Optional&lt;__C.UIImage&gt; in MVVM_Combine_Poke.WebServiceManager.getImage(from: Swift.String) -&gt; Combine.AnyPublisher&lt;Swift.Optional&lt;__C.UIImage&gt;, MVVM_Combine_Poke.WebServiceError&gt;"
+                  moduleName = "MVVM+Combine+Poke"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sam/XCodeProjects/MVVM+Combine+Poke/MVVM+Combine+Poke/Services/WebServiceManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

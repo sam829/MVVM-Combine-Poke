@@ -1,0 +1,6 @@
+framework module Pods_MVVM_Combine_Poke_MVVM_Combine_PokeUITests {
+  umbrella header "Pods-MVVM+Combine+Poke-MVVM+Combine+PokeUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

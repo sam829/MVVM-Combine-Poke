@@ -1,0 +1,21 @@
+PODS:
+  - Palette (1.0.6)
+
+DEPENDENCIES:
+  - Palette (from `https://github.com/galandezzz/ios-Palette.git`)
+
+EXTERNAL SOURCES:
+  Palette:
+    :git: https://github.com/galandezzz/ios-Palette.git
+
+CHECKOUT OPTIONS:
+  Palette:
+    :commit: 9b5b2831367fb32fac0ec97551724f77978a7e85
+    :git: https://github.com/galandezzz/ios-Palette.git
+
+SPEC CHECKSUMS:
+  Palette: aa21bf41603ef85b1d735ae7e17f7685aa21f192
+
+PODFILE CHECKSUM: 6a71b09345a98f1c81c621a042766f4740f86527
+
+COCOAPODS: 1.12.1
