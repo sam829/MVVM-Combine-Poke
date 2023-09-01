@@ -28,6 +28,10 @@ enum WebServiceError : LocalizedError {
 struct WebServiceConstants {
     static let pokemonInitialURL = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20"
     
+    static func getPokemonDetailURL(for id: String) -> String {
+        return "https://pokeapi.co/api/v2/pokemon/\(id)/"
+    }
+    
     static func getImageURL(from index: String) -> String {
         return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/\(index).png"
     }

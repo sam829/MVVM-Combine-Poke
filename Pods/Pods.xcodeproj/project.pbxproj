@@ -85,7 +85,7 @@
 		855272F52693483EDBA42F7C473E8DD9 /* Pods-MVVM+Combine+Poke */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-MVVM+Combine+Poke"; path = Pods_MVVM_Combine_Poke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		942B144C2FA3988FF05C2C805711FB72 /* PaletteBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PaletteBuilder.swift; path = Source/PaletteBuilder.swift; sourceTree = "<group>"; };
 		9A8C6D416EACB3D959355229A98453F2 /* Pods-MVVM+Combine+Poke.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MVVM+Combine+Poke.release.xcconfig"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F20DE1F7A2607A3F511C8FD0A85650B /* Pods-MVVM+Combine+Poke.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MVVM+Combine+Poke.debug.xcconfig"; sourceTree = "<group>"; };
 		A8C840291D4965B67BB75ED7B369D234 /* ColorCutQuantizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorCutQuantizer.swift; path = Source/ColorCutQuantizer.swift; sourceTree = "<group>"; };
 		ABF56CE19C8284C71E10610FB3717CBA /* Palette.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Palette.debug.xcconfig; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		BACB6F472EE30635F3C9B70C5DF580F5 /* Pods-MVVM+Combine+Poke-MVVM+Combine+PokeUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MVVM+Combine+Poke-MVVM+Combine+PokeUITests.modulemap"; sourceTree = "<group>"; };
 		BE039D4780C8B7E15D7CE3C7A88DE2AC /* Pods-MVVM+Combine+Poke-MVVM+Combine+PokeUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-MVVM+Combine+Poke-MVVM+Combine+PokeUITests"; path = Pods_MVVM_Combine_Poke_MVVM_Combine_PokeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB7BC827EED2BF0E734597EA3845E97 /* Palette-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Palette-umbrella.h"; sourceTree = "<group>"; };
-		C622BF77B265DB2DB4BCD6F944DA24DD /* Palette */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Palette; path = Palette.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C622BF77B265DB2DB4BCD6F944DA24DD /* Palette.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Palette.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C72CD509C74724F3361B1E3DB3B417D5 /* Palette-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Palette-Info.plist"; sourceTree = "<group>"; };
 		CF0A3CF4E8275D5DAE158C0DEA502328 /* Color.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Source/Color.swift; sourceTree = "<group>"; };
 		D28BC217BAB61FDC1E4F5C910189E6A4 /* Heap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Heap.swift; path = "Source/Data Structures/Heap.swift"; sourceTree = "<group>"; };
@@ -201,7 +201,6 @@
 				7099FE02242BF619D86AD311B49E945A /* UIImage+Palette.swift */,
 				4685101BA5E9521A01DAC76635B97A87 /* Support Files */,
 			);
-			name = Palette;
 			path = Palette;
 			sourceTree = "<group>";
 		};
@@ -248,7 +247,7 @@
 		A52F2C6BF5A37E0FE175C9E552A00F05 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C622BF77B265DB2DB4BCD6F944DA24DD /* Palette */,
+				C622BF77B265DB2DB4BCD6F944DA24DD /* Palette.framework */,
 				855272F52693483EDBA42F7C473E8DD9 /* Pods-MVVM+Combine+Poke */,
 				BE039D4780C8B7E15D7CE3C7A88DE2AC /* Pods-MVVM+Combine+Poke-MVVM+Combine+PokeUITests */,
 				2DB1B9F697431E6C2F9ED39E9CDB1080 /* Pods-MVVM+Combine+PokeTests */,
@@ -402,7 +401,7 @@
 			);
 			name = Palette;
 			productName = Palette;
-			productReference = C622BF77B265DB2DB4BCD6F944DA24DD /* Palette */;
+			productReference = C622BF77B265DB2DB4BCD6F944DA24DD /* Palette.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */

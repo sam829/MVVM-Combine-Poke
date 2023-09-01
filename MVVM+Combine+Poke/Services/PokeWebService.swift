@@ -36,4 +36,12 @@ class PokeWebService {
     func getPokemonImage(from url: String) -> AnyPublisher<UIImage?, WebServiceError> {
         return WebServiceManager.shared.getImage(from: url)
     }
+    
+    func getPokemonDetail(of id: String) -> AnyPublisher<PokemonDetail?, WebServiceError> {
+        let pokemonDetailResponsePublisher: AnyPublisher<PokemonDetail?, WebServiceError> = WebServiceManager.shared.getData(from: WebServiceConstants.getPokemonDetailURL(for: id))
+        
+        return pokemonDetailResponsePublisher
+            .print("fetching details of pokemon \(id)")
+            .eraseToAnyPublisher()
+    }
 }
