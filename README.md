@@ -2,6 +2,8 @@
 
 A simple Pokémon app demonstrating the MVVM architecture with Combine in Swift.
 
+![Screenshot of the app](i.imgur.com/nXiVKkM.jpg)
+
 ## Overview
 
 This iOS app showcases the Model-View-ViewModel (MVVM) architectural pattern along with Apple's Combine framework. It provides a clean and efficient way to display Pokémon information, including their names, types, and abilities.
