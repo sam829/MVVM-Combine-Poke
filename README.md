@@ -38,11 +38,11 @@ This iOS app showcases the Model-View-ViewModel (MVVM) architectural pattern alo
 ## Project Structure
 The project follows a structured layout:
 
-- Models: Contains data models.
-- ViewModels: Manages presentation logic.
-- Views: Displays UI elements.
-- Services: Handles network requests.
-- Supporting Files: Includes app configuration and assets.
+- **Models**: Contains data models.
+- **ViewModels**: Manages presentation logic.
+- **Views**: Displays UI elements.
+- **Services**: Handles network requests.
+- **Supporting Files**: Includes app configuration and assets.
 
 ## Acknowledgments
 - [PokéAPI](https://pokeapi.co/docs/v2#pokemon): Providing Pokémon data.
