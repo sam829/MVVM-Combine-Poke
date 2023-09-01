@@ -19,6 +19,15 @@ struct PokeAPIResponse: Codable {
 struct Pokemon: Codable {
     let name: String?
     let url: String?
+    
+    var id: String? {
+        if let pokemonURL = url {
+            let stringArray = pokemonURL.components(separatedBy: "/")
+            return stringArray[stringArray.count - 2]
+        } else {
+            return nil
+        }
+    }
 }
 
 typealias Pokemons = [Pokemon]

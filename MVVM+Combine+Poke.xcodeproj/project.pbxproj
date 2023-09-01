@@ -23,7 +23,9 @@
 		221792D52AA0CF4A001A5B79 /* Pokemons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221792D42AA0CF4A001A5B79 /* Pokemons.swift */; };
 		221792D72AA0E31A001A5B79 /* PokeWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221792D62AA0E31A001A5B79 /* PokeWebService.swift */; };
 		221792D92AA0E6F6001A5B79 /* PokemonListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221792D82AA0E6F6001A5B79 /* PokemonListVM.swift */; };
-		221792DC2AA0FB41001A5B79 /* PokemonHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221792DB2AA0FB41001A5B79 /* PokemonHelpers.swift */; };
+		223043EF2AA214E100CA386F /* PokemonTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223043EE2AA214E100CA386F /* PokemonTypeCell.swift */; };
+		223043F12AA2461300CA386F /* UIColor+Additionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223043F02AA2461300CA386F /* UIColor+Additionals.swift */; };
+		22C61CD72AA273B7009AA4EB /* UIProgressView+Additionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C61CD62AA273B7009AA4EB /* UIProgressView+Additionals.swift */; };
 		22E6378E2AA1BEBA00819ACA /* PokemonDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E6378D2AA1BEBA00819ACA /* PokemonDetailVC.swift */; };
 		22E637902AA1BF3500819ACA /* PokemonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E6378F2AA1BF3500819ACA /* PokemonDetail.swift */; };
 		22E637922AA1C59200819ACA /* PokemonDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E637912AA1C59200819ACA /* PokemonDetailVM.swift */; };
@@ -71,7 +73,9 @@
 		221792D42AA0CF4A001A5B79 /* Pokemons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemons.swift; sourceTree = "<group>"; };
 		221792D62AA0E31A001A5B79 /* PokeWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeWebService.swift; sourceTree = "<group>"; };
 		221792D82AA0E6F6001A5B79 /* PokemonListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListVM.swift; sourceTree = "<group>"; };
-		221792DB2AA0FB41001A5B79 /* PokemonHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonHelpers.swift; sourceTree = "<group>"; };
+		223043EE2AA214E100CA386F /* PokemonTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTypeCell.swift; sourceTree = "<group>"; };
+		223043F02AA2461300CA386F /* UIColor+Additionals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additionals.swift"; sourceTree = "<group>"; };
+		22C61CD62AA273B7009AA4EB /* UIProgressView+Additionals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIProgressView+Additionals.swift"; sourceTree = "<group>"; };
 		22E6378D2AA1BEBA00819ACA /* PokemonDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailVC.swift; sourceTree = "<group>"; };
 		22E6378F2AA1BF3500819ACA /* PokemonDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetail.swift; sourceTree = "<group>"; };
 		22E637912AA1C59200819ACA /* PokemonDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailVM.swift; sourceTree = "<group>"; };
@@ -223,6 +227,7 @@
 			children = (
 				221792CC2AA0B35A001A5B79 /* PokemonCell.swift */,
 				221792CD2AA0B35A001A5B79 /* PokemonCell.xib */,
+				223043EE2AA214E100CA386F /* PokemonTypeCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -247,7 +252,8 @@
 		221792DA2AA0FB1B001A5B79 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				221792DB2AA0FB41001A5B79 /* PokemonHelpers.swift */,
+				223043F02AA2461300CA386F /* UIColor+Additionals.swift */,
+				22C61CD62AA273B7009AA4EB /* UIProgressView+Additionals.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -541,12 +547,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				223043F12AA2461300CA386F /* UIColor+Additionals.swift in Sources */,
 				22E637902AA1BF3500819ACA /* PokemonDetail.swift in Sources */,
+				223043EF2AA214E100CA386F /* PokemonTypeCell.swift in Sources */,
 				221792942AA0B01E001A5B79 /* AppDelegate.swift in Sources */,
-				221792DC2AA0FB41001A5B79 /* PokemonHelpers.swift in Sources */,
 				221792D52AA0CF4A001A5B79 /* Pokemons.swift in Sources */,
 				22E6378E2AA1BEBA00819ACA /* PokemonDetailVC.swift in Sources */,
 				221792CE2AA0B35A001A5B79 /* PokemonCell.swift in Sources */,
+				22C61CD72AA273B7009AA4EB /* UIProgressView+Additionals.swift in Sources */,
 				221792C92AA0B169001A5B79 /* PokemonListVC.swift in Sources */,
 				22E637922AA1C59200819ACA /* PokemonDetailVM.swift in Sources */,
 				221792D22AA0C089001A5B79 /* WebServiceManager.swift in Sources */,

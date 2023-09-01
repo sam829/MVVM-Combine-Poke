@@ -10,10 +10,15 @@ import Combine
 import UIKit
 
 class PokemonDetailVM {
-    @Published private(set) var pokemonDetali: PokemonDetail?
+    // MARK: - Variables
+    @Published private(set) var pokemonDetail: PokemonDetail?
+    private(set) var vibrantColorFromImage: UIColor?
+    private(set) var pokemonImage: UIImage?
     
     private var subscriptions: Set<AnyCancellable> = []
     
+    
+    // MARK: - Functions
     /// Fetch pokemon detail from the id
     func getPokemonDetail(from id: String) {
         PokeWebService.shared
@@ -21,21 +26,18 @@ class PokemonDetailVM {
             .sink(
                 receiveCompletion: { _ in print("Pokemon detail completion for \(id)")},
                 receiveValue: { [weak self] pokemonDetail in
-                    self?.pokemonDetali = pokemonDetail
+                    self?.pokemonDetail = pokemonDetail
                 }
             )
             .store(in: &subscriptions)
     }
     
-    /// Load pokemon image from URL
-    func getPokemonImage(from id: String, completion: @escaping (UIImage?) -> Void) {
-        PokeWebService.shared
-            .getPokemonImage(from: WebServiceConstants.getImageURL(from: id))
-            .receive(on: DispatchQueue.main)
-            .sink(
-                receiveCompletion: { _ in print("Image fetching completion is called")},
-                receiveValue: completion
-            )
-            .store(in: &subscriptions)
+    // MARK: - Setters
+    func updateVibrantColor(color: UIColor?) {
+        self.vibrantColorFromImage = color
+    }
+    
+    func updatePokemonImage(with image: UIImage?) {
+        self.pokemonImage = image
     }
 }

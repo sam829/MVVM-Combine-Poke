@@ -21,24 +21,25 @@ class PokemonListVC: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Pokemons"
-
-        prepareTableView()
+        
+        configureUI()
         setupBinding()
         
         viewModel.getPokemons()
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == PokemonDetailVC.segueIdentifier,
-//            let destination = segue.destination as? PokemonDetailVC,
-//            let selectedIndex = self.pokemonListTable.indexPathForSelectedRow?.row {
-//            destination.viewModel.getPokemonDetail(from: getPokemonId(from: self.viewModel.pokemons[selectedIndex].url!))
-//            self.navigationController?.pushViewController(destination, animated: true)
-//        }
-//    }
-    
     // MARK: - Private functions
+    /// Set up view configuration
+    private func configureUI() {
+        self.view.backgroundColor = UIColor(rgb: 0x2B292B)
+        
+        self.navigationItem.title = "Pokemons"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
+        prepareTableView()
+    }
+    
     /// Configure table view
     private func prepareTableView() {
         let nib = UINib(nibName: "PokemonCell", bundle: nil)
@@ -47,6 +48,7 @@ class PokemonListVC: UIViewController {
         self.pokemonListTable.dataSource = self
         self.pokemonListTable.delegate = self
         self.pokemonListTable.separatorStyle = .none
+        self.pokemonListTable.backgroundColor = UIColor(rgb: 0x2B292B)
     }
     
     
@@ -57,16 +59,6 @@ class PokemonListVC: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { _ in
                 self.pokemonListTable.reloadData()
-                
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//                    // TODO: Remove once configured
-//                    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//                    if let pokemonDetailVC = mainStoryboard.instantiateViewController(withIdentifier: "PokemonDetailVC") as? PokemonDetailVC {
-//                        pokemonDetailVC.viewModel.getPokemonDetail(from: getPokemonId(from: self.viewModel.pokemons[0].url!))
-//                        
-//                        self.present(pokemonDetailVC, animated: true)
-//                    }
-//                }
             }
             .store(in: &subscription)
     }
@@ -74,9 +66,10 @@ class PokemonListVC: UIViewController {
     func bind(cell: PokemonCell, to pokemon: Pokemon) {
         cell.pokemonBackgroundView.layer.cornerRadius = 12
         cell.pokemonName.text = pokemon.name?.capitalized
+        cell.backgroundColor = UIColor(rgb: 0x2B292B)
         cell.selectionStyle = .none
         
-        guard let pokemonURL = pokemon.url else { return }
+        guard let pokemonId = pokemon.id else { return }
 //        let pokemonId = getPokemonId(from: pokemonURL)
 //        guard let imageDownloadRequest = URL(string: WebServiceConstants.getImageURL(from: pokemonId)) else { return }
         
@@ -94,7 +87,7 @@ class PokemonListVC: UIViewController {
 //            .store(in: &(self.subscription))
         
         /// Other way to load image via Combine to UIImageView
-        self.viewModel.getPokemonImage(from: pokemonURL, completion: { image in cell.pokemonImage.image = image
+        self.viewModel.getPokemonImage(from: pokemonId, completion: { image in cell.pokemonImage.image = image
             image?.createPalette { palette in
                 cell.pokemonBackgroundView.backgroundColor = palette.lightVibrantColor?.withAlphaComponent(0.3)
             }
@@ -126,7 +119,14 @@ extension PokemonListVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         if let pokemonDetailVC = mainStoryboard.instantiateViewController(withIdentifier: "PokemonDetailVC") as? PokemonDetailVC {
-            pokemonDetailVC.viewModel.getPokemonDetail(from: getPokemonId(from: self.viewModel.pokemons[indexPath.row].url!))
+            if let cell = tableView.cellForRow(at: indexPath) as? PokemonCell {
+                pokemonDetailVC.viewModel.updateVibrantColor(color: cell.pokemonBackgroundView.backgroundColor)
+                pokemonDetailVC.viewModel.updatePokemonImage(with: cell.pokemonImage.image)
+            }
+        
+            if let pokemonId = self.viewModel.pokemons[indexPath.row].id {
+                pokemonDetailVC.viewModel.getPokemonDetail(from:pokemonId)
+            }
             
             self.present(pokemonDetailVC, animated: true)
         }

@@ -30,9 +30,9 @@ class PokemonListVM {
     }
     
     /// Load pokemon image from URL
-    func getPokemonImage(from url: String, completion: @escaping (UIImage?) -> Void) {
+    func getPokemonImage(from id: String, completion: @escaping (UIImage?) -> Void) {
         PokeWebService.shared
-            .getPokemonImage(from: WebServiceConstants.getImageURL(from: getPokemonId(from: url)))
+            .getPokemonImage(from: WebServiceConstants.getImageURL(from: id))
             .receive(on: DispatchQueue.main)
             .sink(
                 receiveCompletion: { _ in print("Image fetching completion is called")},

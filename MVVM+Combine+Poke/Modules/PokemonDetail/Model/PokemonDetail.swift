@@ -9,7 +9,7 @@
 //
 //   let pokemonDetail = try? JSONDecoder().decode(PokemonDetail.self, from: jsonData)
 
-import Foundation
+import UIKit
 
 // MARK: - PokemonDetail
 struct PokemonDetail: Codable {
@@ -17,7 +17,7 @@ struct PokemonDetail: Codable {
     let baseExperience: Int?
     let forms: [Species]?
     let gameIndices: [GameIndex]?
-    let height: Int?
+    let height: Double?
     let heldItems: [HeldItem]?
     let id: Int?
     let isDefault: Bool?
@@ -30,7 +30,35 @@ struct PokemonDetail: Codable {
     let sprites: Sprites?
     let stats: [Stat]?
     let types: [TypeElement]?
-    let weight: Int?
+    let weight: Double?
+    
+    var roundedWeightString: String {
+        return "\(Double(round(1000 * (self.weight ?? 0)) / 1000)) KG"
+    }
+    
+    var roundedHeightString: String {
+        return "\(Double(round(1000 * (self.height ?? 0)) / 1000)) M"
+    }
+    
+    var hp: Float {
+        return Float.random(in: 0..<1)
+    }
+    
+    var attack: Float {
+        return Float.random(in: 0..<1)
+    }
+    
+    var defence: Float {
+        return Float.random(in: 0..<1)
+    }
+    
+    var speed: Float {
+        return Float.random(in: 0..<1)
+    }
+    
+    var exp: Float {
+        return Float.random(in: 0..<1)
+    }
 
     enum CodingKeys: String, CodingKey {
         case abilities
@@ -65,6 +93,29 @@ struct Ability: Codable {
 struct Species: Codable {
     let name: String?
     let url: String?
+    
+    var typeBackgroundColor: UIColor {
+        switch(self.name) {
+            case "fighting" : return UIColor(rgb: 0x9F422A)
+            case "flying" : return UIColor(rgb: 0x90B1C5)
+            case "poison" : return UIColor(rgb: 0x642785)
+            case "ground" : return UIColor(rgb: 0xAD7235)
+            case "rock" : return UIColor(rgb: 0x4B190E)
+            case "bug" : return UIColor(rgb: 0x179A55)
+            case "ghost" : return UIColor(rgb: 0x363069)
+            case "steel" : return UIColor(rgb: 0x5C756D)
+            case "fire" : return UIColor(rgb: 0xB22328)
+            case "water" : return UIColor(rgb: 0x2648DC)
+            case "grass" : return UIColor(rgb: 0x007C42)
+            case "electric" : return UIColor(rgb: 0xE0E64B)
+            case "psychic" : return UIColor(rgb: 0xAC296B)
+            case "ice" : return UIColor(rgb: 0x7ECFF2)
+            case "dragon" : return UIColor(rgb: 0x378A94)
+            case "fairy" : return UIColor(rgb: 0x9E1A44)
+            case "dark" : return UIColor(rgb: 0x040706)
+            default : return UIColor(rgb: 0xB1A5A5)
+        }
+    }
 }
 
 // MARK: - GameIndex
@@ -342,6 +393,61 @@ struct Stat: Codable {
         case effort, stat
     }
 }
+
+//enum PokemonStats: Int, CaseIterable {
+//    case hp, attack, defence, speed, exp
+//
+//    var section: Int {
+//        switch self {
+//            case .hp: return 0
+//            case .attack: return 1
+//            case .defence: return 2
+//            case .speed: return 3
+//            case .exp: return 4
+//        }
+//    }
+//
+//    var stateFromSection: PokemonStats {
+//        switch self.rawValue {
+//            case 0: return .hp
+//            case 1: return .attack
+//            case 2: return .defence
+//            case 3: return .speed
+//            case 4: return .exp
+//            default: return .hp
+//        }
+//    }
+//
+//    var color: UIColor {
+//        switch self {
+//        case .hp:
+//            return .black
+//        case .attack:
+//            return .blue
+//        case .defence:
+//            return .yellow
+//        case .speed:
+//            return .cyan
+//        case .exp:
+//            return .brown
+//        }
+//    }
+//
+//    var description: String {
+//        switch self {
+//        case .hp:
+//            return "HP"
+//        case .attack:
+//            return "ATK"
+//        case .defence:
+//            return "DFNC"
+//        case .speed:
+//            return "SPD"
+//        case .exp:
+//            return "EXP"
+//        }
+//    }
+//}
 
 // MARK: - PastType
 struct PastType: Codable {
