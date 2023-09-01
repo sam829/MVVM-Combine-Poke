@@ -2,7 +2,7 @@
 
 A simple Pokémon app demonstrating the MVVM architecture with Combine in Swift.
 
-![Screenshot of the app](i.imgur.com/nXiVKkM.jpg)
+![Screenshot of the app](https://github.com/sam829/MVVM-Combine-Poke/blob/main/screenshot.jpeg)
 
 ## Overview
 
